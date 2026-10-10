@@ -1,0 +1,89 @@
+# =====================================================================
+# Vivado / Xilinx 专用 .gitignore  (适用于 Vivado 2025.2)
+#
+# 原则: 仓库只保留"源文件"(RTL / 约束 / TCL 脚本 / 内存初始化文件),
+#       忽略 Vivado 工程与综合/实现/仿真产生的所有中间产物, 保证仓库
+#       干净、可跨机器重建。
+# 推荐: 用 TCL 脚本重建工程, 而不是直接提交 .xpr 工程文件。
+#
+# 会保留(不忽略): *.v *.sv *.vh *.vhd  *.xdc *.sdc  *.tcl  *.mif *.coe
+# =====================================================================
+
+# ---- Vivado 工程目录与工具内部目录 ----
+.Xil/
+.cache/
+.hw/
+.ip_user_files/
+.vivado_history/
+*.cache/
+*.ip_user_files/
+*.hw/
+*.Xil/
+
+# ---- 工程文件(建议用 TCL 脚本重建, 而非提交工程文件) ----
+*.xpr
+*.lpr
+*.ppr
+
+# ---- 综合/实现生成目录 ----
+*.runs/
+*.gen/
+*.sim/
+*.srcs/
+*.data/
+*.ipdefs/
+*.prj
+*.pbs
+
+# ---- 日志 / 报告 / 记录 ----
+*.log
+*.jou
+*.rpt
+*.bgn
+*.bld
+*.drc
+
+# ---- 综合/实现中间产物 ----
+*.dcp
+*.edf
+*.ngc
+*.ngd
+*.ncd
+*.ngm
+*.pcf
+*.psr
+*.map
+*.mrp
+*.twr
+*.twx
+*.ut
+*.xst
+*.syr
+*.lso
+*.par
+
+# ---- 下载 / bitstream 产物 ----
+*.bit
+*.bin
+*.mcs
+*.prm
+*.ltx
+
+# ---- 仿真产物 ----
+*.wdb
+*.wcfg
+*.vcd
+*.saif
+*.dmp
+*.pb
+*.dtcp
+*.isim
+*.fsdb
+
+# ---- 编辑器 / 系统临时文件 ----
+*~
+*.swp
+*.bak
+*.orig
+.DS_Store
+Thumbs.db
